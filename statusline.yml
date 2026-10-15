@@ -1,0 +1,9 @@
+# Reference status-line block for agent config (`~/.omp/agent/config.yml`).
+# `preset: custom` is required for omp to honor explicit segment lists; if your
+# config already uses custom preset lists, just make sure `status` appears in
+# `leftSegments` (or `rightSegments`) — other segmentOptions are kept as-is.
+statusLine:
+  preset: custom
+  leftSegments: [pi, vim, model, mode, collab, stream, path, git, pr, context_pct, cost, status]
+  rightSegments: [session_name]
+  showHookStatus: false

@@ -1,0 +1,24 @@
+{
+  "name": "omp-opencode-go-usage",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "description": "Show OpenCode Go plan usage (rolling 5h / weekly / monthly) in the omp status line",
+  "author": "pawprint0706",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pawprint0706/omp-opencode-go-usage.git"
+  },
+  "keywords": [
+    "omp",
+    "omp-plugin",
+    "opencode-go",
+    "statusline",
+    "usage"
+  ],
+  "omp": {
+    "extensions": [
+      "./extensions/opencode-go-usage.ts"
+    ]
+  }
+}
