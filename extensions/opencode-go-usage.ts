@@ -9,7 +9,7 @@
 //              weekly:    { ... },
 //              monthly:   { ... } } }             // status: "ok" | "rate-limited"
 //
-// Display: `5h 37% | Wk 12% | Mo 5%` — used percent per window. Windows are
+// Display: `OC 5h 37% | Wk 12% | Mo 5%` — used percent per window. Windows are
 // joined with `|` on purpose: the status line concatenates several extensions'
 // hook statuses with ` · `, so an intra-window `|` keeps this meter readable as
 // one group next to others (e.g. `… | Mo 0% · OR $4.89`).
@@ -64,13 +64,13 @@ let warnedFailure = false;
 let sessionTag: string | undefined;
 
 function setStatus(ctx: UsageStatusCtx, rows: Reading[], stale: boolean): void {
-  // `5h 37% | Wk 12% | Mo 5%`; stale appends `?` to every window.
+  // `OC 5h 37% | Wk 12% | Mo 5%`; stale appends `?` to every window.
   const staleMark = stale ? "?" : "";
   const text = rows
     .map((r) => `${r.tag} ${r.percent}%${r.exhausted ? "!" : ""}${staleMark}`)
     .join(" | ");
   try {
-    ctx.ui.setStatus(STATUS_KEY, text);
+    ctx.ui.setStatus(STATUS_KEY, text ? `OC ${text}` : text);
   } catch {
     // Why: a no-op/UI-less context must never break the turn.
   }

@@ -3,10 +3,10 @@
 Shows OpenCode Go plan usage at the end of the omp status line:
 
 ```
- π · ◒ DeepSeek V4.1 Flash · 📁 ~/dev/app · ◫ 12.1%/1M ⟲ · $0.08 · 5h 37% | Wk 12% | Mo 5%
+ π · ◒ DeepSeek V4.1 Flash · 📁 ~/dev/app · ◫ 12.1%/1M ⟲ · $0.08 · OC 5h 37% | Wk 12% | Mo 5%
 ```
 
-Each window shows `tag used%`, joined with `|`:
+The `OC` prefix stands for OpenCode. Each window shows `tag used%`, joined with `|`:
 
 | Tag | Window | Meaning |
 | --- | --- | --- |
@@ -19,7 +19,7 @@ status line separates *different extensions'* hook statuses with ` · `, so the
 meter next to another plugin reads unambiguously, e.g.
 
 ```
-… · 5h 1% | Wk 0% | Mo 0% · OR $4.89
+… · OC 5h 1% | Wk 0% | Mo 0% · OR $4.89
 ```
 
 Data source: `GET https://opencode.ai/zen/go/v1/usage` with the credential omp
